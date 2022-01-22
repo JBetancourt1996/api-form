@@ -15,6 +15,7 @@
           <img :src="`${item.image}`" alt class="w-5/12 h-36 rounded-l bg-cover bg-center" />
           <div class="w-full h-36 flex flex-col justify-between px-2 text-white">
             <div class="h-10 leading-none bg-greesn-500">
+              <div></div>
               <p class="font-semibold text-sm sm:text-lg">{{ item.name }}</p>
               <div
                 class="inline-block text-sm h-2 w-2 bg-green-600 rounded-full"
