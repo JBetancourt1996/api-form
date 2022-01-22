@@ -31,8 +31,8 @@ export default {
       .then((res) => {
         const [result] = res;
            this.caracter = result.data.results
-            const sext = this.caracter.slice(1, 7)
-            this.caracter = sext;
+            const six = this.caracter.slice(1, 7)
+            this.caracter = six;
 
         
        
