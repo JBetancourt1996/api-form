@@ -3,19 +3,19 @@ import { required, alpha, email, numeric } from "vee-validate/dist/rules";
 
 extend("required", {
     ...required,
-    message: "This field is required "
+    message: "Este campo es obligatorio "
 });
 extend("alpha", {
 
-    ...alpha, message: "The alpha_field field may only contain alphabetic characters"
+    ...alpha, message: "El campo alpha_field solo puede contener caracteres alfabéticos"
 });
 
 extend("email", {
 
-    ...email, message: "The email field must be a valid email"
+    ...email, message: "El campo debe ser un correo electrónico válido."
 });
 
 extend("phone", {
     ...numeric,
-    message: "The field field format is invalid"
+    message: "El formato del campo del campo no es válido"
 })

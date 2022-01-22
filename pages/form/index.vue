@@ -66,10 +66,10 @@
               </div>
               
               <div class="">
-                    <label for="">Correo</label>
+                  
                   
                         <ValidationProvider rules="required|email" v-slot="{errors}">
-                             <input v-model="formApi.email" v-validate="'email'" data-vv-as="email" name="email_field" type="text" 
+                             <input v-model="formApi.email" v-validate="'email'" data-vv-as="email" name="email_field" placeholder="Correo" type="text" 
                               class="
                     block
                     w-full
