@@ -10,13 +10,14 @@
       border-r
       space-y-14
       h-screen
+  
     "
   >
     <div class="flex items-center w-full space-x-2">
    
       <span class="font-semibold text-lg leading-none">{{ pageName }}</span>
     </div>
-    <ul class="flex flex-col w-full space-y-1 bg-slsate-900">
+    <ul class="flex flex-col w-full  space-y-1 bg-slsate-900">
       <nuxt-link
         v-for="(m, k) of menu"
         :key="k"

@@ -9,30 +9,30 @@
 import LayoutSubmenu from "../components/layout/Submenu";
 
 export default {
-  name: "form",
+  layout: 'index',
+  name: "index",
 
   components: { LayoutSubmenu },
-  layout:'login',
-
   data() {
     return {
       menu: [
-     
-        
+
+
+
         {
-           
+
           name: "Formulario",
-         
+
           path: "/form",
         },
-          {
-          
+        {
+
           name: "Rick and morty",
-        
+
           path: "/form/rickmorty",
         },
-      
-     
+
+
       ],
     };
   },
