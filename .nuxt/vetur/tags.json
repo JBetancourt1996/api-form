@@ -1,0 +1,11 @@
+{
+  "LayoutBreadcrumb": {
+    "description": "Auto imported from components/layout/Breadcrumb.vue"
+  },
+  "LayoutContent": {
+    "description": "Auto imported from components/layout/Content.vue"
+  },
+  "LayoutSubmenu": {
+    "description": "Auto imported from components/layout/Submenu.vue"
+  }
+}
