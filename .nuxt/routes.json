@@ -3,21 +3,18 @@
     "name": "form",
     "path": "/form",
     "component": "C:\\\\api-form\\\\pages\\\\form\\\\index.vue",
-    "chunkName": "pages/form/index",
-    "_name": "_6343ff06"
+    "chunkName": "pages/form/index"
   },
   {
     "name": "form-rickmorty",
     "path": "/form/rickmorty",
     "component": "C:\\\\api-form\\\\pages\\\\form\\\\rickmorty.vue",
-    "chunkName": "pages/form/rickmorty",
-    "_name": "_bcd33b6c"
+    "chunkName": "pages/form/rickmorty"
   },
   {
     "name": "index",
     "path": "/",
     "component": "C:\\\\api-form\\\\pages\\\\index.vue",
-    "chunkName": "pages/index",
-    "_name": "_1eb511ca"
+    "chunkName": "pages/index"
   }
 ]

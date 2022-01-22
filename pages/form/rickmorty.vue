@@ -6,15 +6,78 @@
     ]"
   >
      <NuxtLink class=" py-4 w-24 text-center text-base leading-none rounded  bg-indigo-400" to="/">Principal</NuxtLink>
-           <div class=" h-screen flex flex-wrap mt-5 justify-center content-center">
-    <div class=" h-5/6 w-2/3 flex  flex-wrap justify-center p-4 gap-6 bg-black text-white">
-        <div class=" flex gap-4 py-8 px-8  h-40  w-1/4   text-xs bg-gray-400 " v-for="item  in caracter" :key="item.id <= 6">
-           <div class=" "><div><img class="h-24  w-24" v-bind:src="item.image"  alt=""></div></div>
-           <div > <div>{{item.name}}</div>
-           <div>{{item.status}}</div>
-           <div>{{item.location.name}}</div></div>
-         
+        <div class="flex mt-2  p-2 justify-center content-center bg-gray-700 h-3/4">
+    <div
+      class="
+        principal
+        w-10/12
+        bg-gray-700
+        grid
+        gap-4
+        py-20
+        sm:grid-cols-2
+        lg:grid-cols-3 
+      "
+    >
+      <div
+        class="w-full bg-gray-500 flex   rounded h-36"
+        v-for="item of arrys"
+        :key="item.id"
+      >
+        <img
+          :src="`${item.image}`"
+          alt=""
+          class="w-5/12 h-36 rounded-l bg-cover bg-center"
+        />
+        <div
+          class="
+            w-full
+             h-36
+            
+            flex flex-col
+            justify-between
+             px-2
+            text-white
+          
+        
+          "
+        >
+          <div class="h-10 leading-none bg-greesn-500">
+            <p class="font-semibold text-sm sm:text-lg">{{ item.name }}</p>
+            <div
+              class="inline-block text-sm h-2 w-2 bg-green-600 rounded-full"
+              v-if="item.status === 'Alive'"
+            ></div>
+            <div
+              class="inline-block text-sm h-2 w-2 bg-red-600 rounded-full"
+              v-if="item.status === 'Dead'"
+            ></div>
+            <div
+              class="inline-block text-sm h-2 w-2 bg-gray-400 rounded-full"
+              v-if="item.status === 'unknown'"
+            ></div>
+            <p class="text-xs inline-block font-medium">
+              {{ item.status }} - {{ item.species }}
+            </p>
+          </div>
+
+          <div class="h-10 leading-none pt-2 bsg-green-500">
+            <p class="text-xs text-gray-400 font-semibold">
+              Last know location:
+            </p>
+            <p class="text-xs leading-none text-gray-200 font-semibold">
+              {{ item.location.name }}
+            </p>
+          </div>
+
+          <div class="h-12 leading-none pt-2 mb-2">
+            <p class="text-xs text-gray-400 font-semibold">First seen in:</p>
+            <p class="text-xs text-gray-200 font-semibold">
+              {{ item.origin.name }}
+            </p>
+          </div>
         </div>
+      </div>
     </div>
   </div>
    </layout-content>
@@ -30,9 +93,9 @@ export default {
     Promise.all([result()])
       .then((res) => {
         const [result] = res;
-           this.caracter = result.data.results
-            const six = this.caracter.slice(1, 7)
-            this.caracter = six;
+           this.arrys = result.data.results
+            const six = this.arrys.slice(1, 7)
+            this.arrys = six;
 
         
        
@@ -44,10 +107,8 @@ export default {
   },
   data(){
     return{
-     caracter:[]
+     arrys:[]
     }
-  },
-  methods:{
   }
 
 }
