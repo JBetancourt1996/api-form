@@ -91,6 +91,7 @@ export default {
   fetchOnServer: false,
   data() {
     return {
+      value: "",
       message: "",
       formApi: {
         name: '',

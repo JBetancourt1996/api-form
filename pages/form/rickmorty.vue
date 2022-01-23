@@ -9,8 +9,8 @@
       class="py-4 w-24 text-center text-base leading-none rounded bg-indigo-400"
       to="/"
     >Principal</NuxtLink>
-    <div class="flex mt-2 p-2 justify-center content-center bg-gray-700 h-3/4">
-      <div class="principal w-10/12 bg-gray-700 grid gap-4 py-20 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="flex flex-wrap relative mt-2 p-2 justify-center content-center bg-gray-700 h-3/4">
+      <div class="principal w-10/12 bg-gray-700 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <div class="w-full bg-gray-500 flex rounded h-36" v-for="item of arrys" :key="item.id">
           <img :src="`${item.image}`" alt class="w-5/12 h-36 rounded-l bg-cover bg-center" />
           <div class="w-full h-36 flex flex-col justify-between px-2 text-white">
@@ -61,15 +61,13 @@ export default {
         this.arrys = result.data.results
         const six = this.arrys.slice(1, 7)
         this.arrys = six;
-
-
-
       })
       .catch((err) => {
         this.err = err.response.data.message;
       })
 
   },
+  fetchOnServer: false,
   data() {
     return {
       arrys: []

@@ -12,7 +12,9 @@ export default {
   layout: 'index',
   name: "index",
 
-  components: { LayoutSubmenu },
+  components: {
+    LayoutSubmenu
+  },
   data() {
     return {
       menu: [

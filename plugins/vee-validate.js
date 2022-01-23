@@ -1,5 +1,12 @@
-import { extend } from "vee-validate";
-import { required, alpha, email, numeric } from "vee-validate/dist/rules";
+import {
+    extend
+} from "vee-validate";
+import {
+    required,
+    alpha,
+    email,
+    numeric
+} from "vee-validate/dist/rules";
 
 extend("required", {
     ...required,
@@ -7,12 +14,14 @@ extend("required", {
 });
 extend("alpha", {
 
-    ...alpha, message: "El campo alpha_field solo puede contener caracteres alfabéticos"
+    ...alpha,
+    message: "El campo alpha_field solo puede contener caracteres alfabéticos"
 });
 
 extend("email", {
 
-    ...email, message: "El campo debe ser un correo electrónico válido."
+    ...email,
+    message: "El campo debe ser un correo electrónico válido."
 });
 
 extend("phone", {
