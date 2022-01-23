@@ -15,12 +15,16 @@ export default {
     },
     components: true,
     loading: { color: "#2c5282", height: "5px" },
-    plugins: [
-        "~/plugins/vee-validate.js"
+    plugins: ["~/plugins/vee-validate.js",
+
+
     ],
+
     build: {
         postcss: { plugins: { tailwindcss: {}, autoprefixer: {}, }, },
         transpile: ["vee-validate/dist/rules"],
+
+        extend(config, ctx) { }
     },
     buildModules: [
 
