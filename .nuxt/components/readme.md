@@ -6,6 +6,4 @@ You can directly use them in pages and other components without the need to impo
 
 **Tip:** If a component is conditionally rendered with `v-if` and is big, it is better to use `Lazy` or `lazy-` prefix to lazy load.
 
-- `<LayoutBreadcrumb>` | `<layout-breadcrumb>` (components/layout/Breadcrumb.vue)
-- `<LayoutContent>` | `<layout-content>` (components/layout/Content.vue)
-- `<LayoutSubmenu>` | `<layout-submenu>` (components/layout/Submenu.vue)
+- `<LayoutMenu>` | `<layout-menu>` (components/layout/menu.vue)

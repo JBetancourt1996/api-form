@@ -1,6 +1,4 @@
-export { default as LayoutBreadcrumb } from '../..\\components\\layout\\Breadcrumb.vue'
-export { default as LayoutContent } from '../..\\components\\layout\\Content.vue'
-export { default as LayoutSubmenu } from '../..\\components\\layout\\Submenu.vue'
+export { default as LayoutMenu } from '../..\\components\\layout\\menu.vue'
 
 // nuxt/nuxt.js#8607
 function wrapFunctional(options) {

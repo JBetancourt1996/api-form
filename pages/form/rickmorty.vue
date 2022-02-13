@@ -1,14 +1,5 @@
 <template>
-  <layout-content
-    page-title="api morty"
-    :breadcrumb="[
-      { name: '', to: '/form/rickmorty' },
-    ]"
-  >
-    <NuxtLink
-      class="py-4 w-24 text-center text-base leading-none rounded bg-indigo-400"
-      to="/"
-    >Principal</NuxtLink>
+  <layout-content page-title="api morty">
     <div class="flex flex-wrap relative mt-2 p-2 justify-center content-center bg-gray-700 h-3/4">
       <div class="principal w-10/12 bg-gray-700 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <div class="w-full bg-gray-500 flex rounded h-36" v-for="item of arrys" :key="item.id">
