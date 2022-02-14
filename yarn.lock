@@ -8129,7 +8129,7 @@
   "resolved" "https://registry.npmjs.org/vary/-/vary-1.1.2.tgz"
   "version" "1.1.2"
 
-"vee-validate@3.0.0":
+"vee-validate@^3.0.0":
   "integrity" "sha512-YtiMl8hniTARExMRBCVqxUjGgXYaNi18h1zTozcqVK0ceeHYafRhDJx0wURvAshHhmk5hVcL4UNokyeXX7epQg=="
   "resolved" "https://registry.npmjs.org/vee-validate/-/vee-validate-3.0.0.tgz"
   "version" "3.0.0"

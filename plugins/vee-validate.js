@@ -2,10 +2,11 @@ import {
     extend
 } from "vee-validate";
 import {
+
     required,
     alpha,
     email,
-    numeric
+    digits
 } from "vee-validate/dist/rules";
 
 extend("required", {
@@ -24,7 +25,7 @@ extend("email", {
     message: "El campo debe ser un correo electrónico válido."
 });
 
-extend("phone", {
-    ...numeric,
-    message: "El formato del campo del campo no es válido"
-})
+extend("digits", {
+    ...digits,
+    message: "Tiene que ser 8 números."
+});

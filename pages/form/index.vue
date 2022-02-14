@@ -1,17 +1,15 @@
 <template>
-  <section class>
+  <section class="bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400">
     <!-- Contenedor = container -->
-    <div class="container items-center px-5 py-12 lg:px-20">
+    <div class="container items-center mx-auto px-5 py-12 lg:px-20">
       <!-- style div -->
       <div
-        class="flex flex-col w-full max-w-md p-10 mx-auto my-12 transition duration-500 ease-out transform bg-white rounded-lg md:mt-0"
+        class="flex flex-col w-full max-w-md p-10 mx-auto my-12 transition duration-500 ease-out transform bg-white opacity-80 rounded-lg md:mt-0"
       >
-        <div class="w-full bg-gray-s700 flex justify-center"></div>
-        <div class="w-full mt-8 bg-gray-700 flex justify-center"></div>
-        <!-- div margin 8 -->
-        <div class="justify-centers bg-wbluse-300">
+        <div class="flex flex-col bg-sldate-700">
           <!-- margin 6 -->
-          <div class="mt-6 bg-wblue-600">
+          <span class="bg-slxate-400 mx-auto text-lg font-semibold">Datos básicos</span>
+          <div class="mt-2 bg-wblue-600">
             <ValidationObserver v-slot="{ invalid }" href="form">
               <form class="space-y-6" @submit.prevent="submit('form', formApi)" :model="formApi">
                 <div class="mt-1">
@@ -21,9 +19,9 @@
                       type="=text"
                       name="name"
                       placeholder="Nombre"
-                      class="block w-full px-5 py-2 leading-none text-base text-neutral-600 placeholder-gray-300 transition duration-500 ease-in-out transform border-2 rounded-lg bg-gray-50"
+                      class="block w-full px-5 py-2 leading-none text-base text-neutral-600 placeholder-gray-400 transition duration-500 ease-in-out transform border-2 rounded-lg bg-gray-50"
                     />
-                    <span class="text-rose-400">{{ errors[0] }}</span>
+                    <span class="text-rose-400 text-base">{{ errors[0] }}</span>
                   </ValidationProvider>
                 </div>
 
@@ -31,29 +29,21 @@
                   <ValidationProvider rules="required|email" v-slot="{ errors }">
                     <input
                       v-model="formApi.email"
-                      v-validate="'email'"
-                      data-vv-as="email"
-                      name="email_field"
                       placeholder="Correo"
                       type="text"
-                      class="block w-full px-5 py-2 leading-none text-base text-neutral-600 placeholder-gray-300 transition duration-500 ease-in-out transform border-2 rounded-lg bg-gray-50"
+                      class="block w-full px-5 py-2 leading-none text-base text-neutral-600 placeholder-gray-400 transition duration-500 ease-in-out transform border-2 rounded-lg bg-gray-50"
                     />
-                    <span class="text-rose-400">{{ errors[0] }}</span>
+                    <span class="text-rose-400 text-base">{{ errors[0] }}</span>
                   </ValidationProvider>
                 </div>
                 <div class="mt-1">
-                  <ValidationProvider rules="required|phone" v-slot="{ errors }">
+                  <ValidationProvider rules="required|digits:8" v-slot="{ errors }">
                     <input
                       v-model="formApi.phone"
-                      type="tel"
-                      v-validate="'numeric'"
-                      data-vv-as="field"
-                      name="numeric_field"
                       placeholder="Telefono"
-                      id
-                      class="block w-full px-5 py-2 leading-none text-base text-neutral-600 placeholder-gray-300 transition duration-500 ease-in-out transform border-2 rounded-lg bg-gray-50"
+                      class="block w-full px-5 py-2 leading-none text-base placeholder-gray-400 transition duration-500 ease-in-out transform border-2 rounded-lg bg-gray-50"
                     />
-                    <span class="text-rose-400">{{ errors[0] }}</span>
+                    <span class="text-rose-400 text-base">{{ errors[0] }}</span>
                   </ValidationProvider>
                 </div>
                 <div>
@@ -73,18 +63,23 @@
 </template>
 <script>
 
-import { ValidationProvider, ValidationObserver } from "vee-validate";
+import {
+  ValidationProvider, ValidationObserver,
+} from "vee-validate";
 
 export default {
   components: {
-    ValidationProvider,
     ValidationObserver,
+    ValidationProvider,
+
   },
   fetchOnServer: false,
   data() {
     return {
+      dataSave: false,
       value: "",
       message: "",
+
       formApi: {
         name: '',
         email: '',
@@ -100,18 +95,24 @@ export default {
         },
       };
 
+
       this.$axios.post("https://prize.manager.orangesoftco.com/api/v1/players", formApi, config).then((res) => {
-        this.message = res.data.message
-        this.formApi.name = "";
-        this.formApi.email = "";
-        this.formApi.phone = "";
+        this.message = res.data.message;
+        this.$nextTick(() => { this.reset() })
+
 
       });
 
 
 
-    }
+    },
+    reset() {
+      const a = this.formApi.name = "";
+      this.formApi.email = "";
+      this.formApi.phone = "";
 
+      return a;
+    }
   }
 }
 </script>

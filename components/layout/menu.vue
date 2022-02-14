@@ -1,20 +1,14 @@
 <template>
-    <div
-        class="flex flex-col items-center py-6 px-4 bg-gradient-to-r from-indigo-500 w-56 border-r space-y-14 h-screen"
-    >
-        <div class="flex items-center w-full space-x-2">
-            <span class="font-semibold text-lg leading-none"></span>
-        </div>
-
-        <ul class="flex flex-col w-full space-y-1 bg-slsate-900">
+    <div class="flex w-dcreen h-12">
+        <ul class="flex w-full bg-sladte-500 space-y-1">
             <nuxt-link
                 v-for="(m, k) of menu"
                 :key="k"
-                tag="li"
+                tag="div"
                 :to="{ path: m.path }"
-                class="flex items-center py-3 px-3 hover:bg-blue-200 hover:text-blue-800 text-gray-900 text-base rounded cursor-pointer space-x-2"
+                class="flex w-fusll items-center py-1 px-3 cursor-pointer"
             >
-                <span class="leading-none">{{ m.name }}</span>
+                <span class="text-lg font-semibold text-white">{{ m.name }}</span>
             </nuxt-link>
         </ul>
     </div>
@@ -23,25 +17,26 @@
 
 <script>
 export default {
-
-    name: "index",
-    components: {
-    },
     data() {
         return {
             menu: [
-
                 {
-                    id: 1,
+
+                    name: "Home",
+                    path: "/",
+                },
+                {
+
                     name: "Formulario",
                     path: "/form",
                 },
                 {
-                    id: 2,
-                    name: "Rick and morty",
+
+                    name: "Api-morty",
 
                     path: "/form/rickmorty",
                 },
+
 
 
             ],
