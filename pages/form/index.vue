@@ -51,7 +51,10 @@
                     :disabled="invalid"
                     type="submit"
                     class="flex items-center justify-center w-full px-10 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-green-600 rounded-xl hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-                  >Sign in</button>
+                  >
+                    Sign
+                    in
+                  </button>
                 </div>
               </form>
             </ValidationObserver>
@@ -62,9 +65,9 @@
   </section>
 </template>
 <script>
-
 import {
-  ValidationProvider, ValidationObserver,
+  ValidationProvider,
+  ValidationObserver,
 } from "vee-validate";
 
 export default {
@@ -98,10 +101,16 @@ export default {
 
       this.$axios.post("https://prize.manager.orangesoftco.com/api/v1/players", formApi, config).then((res) => {
         this.message = res.data.message;
-        this.$nextTick(() => { this.reset() })
+        this.$nextTick(() => {
+          this.reset()
+        })
 
 
       });
+
+      setTimeout(() => {
+        this.dataSave = false;
+      }, 4000)
 
 
 
