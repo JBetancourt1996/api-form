@@ -42,7 +42,7 @@ export default {
     Promise.all([result()])
       .then((res) => {
         const [result] = res;
-        this.arrys = result.data.results.slice(1, 7)
+        this.arrys = result.data.results.slice(1, 10)
       })
       .catch((err) => {
         console.error(this.err = 'error promise')

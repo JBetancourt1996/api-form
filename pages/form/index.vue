@@ -101,6 +101,7 @@ export default {
 
       this.$axios.post("https://prize.manager.orangesoftco.com/api/v1/players", formApi, config).then((res) => {
         this.message = res.data.message;
+        console.log(this.message)
         this.$nextTick(() => {
           this.reset()
         })

@@ -2,7 +2,6 @@ import {
     extend
 } from "vee-validate";
 import {
-
     required,
     alpha,
     email,
@@ -16,7 +15,7 @@ extend("required", {
 extend("alpha", {
 
     ...alpha,
-    message: "El campo alpha_field solo puede contener caracteres alfabéticos"
+    message: "El campo nombre solo puede contener caracteres alfabéticos"
 });
 
 extend("email", {
