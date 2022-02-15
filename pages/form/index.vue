@@ -6,10 +6,10 @@
       <div
         class="flex flex-col w-full max-w-md p-10 mx-auto my-12 transition duration-500 ease-out transform bg-white opacity-80 rounded-lg md:mt-0"
       >
-        <div class="flex flex-col bg-sldate-700">
+        <div class="flex flex-col">
           <!-- margin 6 -->
-          <span class="bg-slxate-400 mx-auto text-lg font-semibold">Datos básicos</span>
-          <div class="mt-2 bg-wblue-600">
+          <span class="mx-auto text-lg font-semibold">Datos básicos</span>
+          <div class="mt-2">
             <ValidationObserver v-slot="{ invalid }" href="form">
               <form class="space-y-6" @submit.prevent="submit('form', formApi)" :model="formApi">
                 <div class="mt-1">
@@ -51,10 +51,7 @@
                     :disabled="invalid"
                     type="submit"
                     class="flex items-center justify-center w-full px-10 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-green-600 rounded-xl hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-                  >
-                    Sign
-                    in
-                  </button>
+                  >Enviar</button>
                 </div>
               </form>
             </ValidationObserver>
@@ -102,9 +99,8 @@ export default {
       this.$axios.post("https://prize.manager.orangesoftco.com/api/v1/players", formApi, config).then((res) => {
         this.message = res.data.message;
         console.log(this.message)
-        this.$nextTick(() => {
-          this.reset()
-        })
+        this.reset()
+
 
 
       });
