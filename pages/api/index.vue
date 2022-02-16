@@ -1,7 +1,7 @@
 <template>
-  <div class="bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400">
+  <div class="bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 mt-12">
     <div class="flex flex-col mx-8 my-4 space-y-4">
-      <div class="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 bg-gray-800 px-3 py-2">
+      <div class="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 bg-gray-800 px-3 py-2">
         <div class="bg-gray-500 text-white rounded" v-for="item of arrys" :key="item.id">
           <div class="flex justify-between">
             <img :src="`${item.image}`" alt class="w-32 h-36 rounded-l bg-cover bg-center" />

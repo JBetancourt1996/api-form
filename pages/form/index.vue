@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400">
+  <section class="bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 mt-12">
     <!-- Contenedor = container -->
     <div class="container items-center mx-auto px-5 py-12 lg:px-20">
       <!-- style div -->
