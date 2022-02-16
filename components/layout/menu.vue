@@ -19,23 +19,22 @@
 export default {
     data() {
         return {
-            menu: [
-                {
+            menu: [{
 
-                    name: "Home",
-                    path: "/",
-                },
-                {
+                name: "Home",
+                path: "/",
+            },
+            {
 
-                    name: "Formulario",
-                    path: "/form",
-                },
-                {
+                name: "Formulario",
+                path: "/form",
+            },
+            {
 
-                    name: "Api-morty",
+                name: "Api-morty",
 
-                    path: "/api",
-                },
+                path: "/api",
+            },
 
 
 

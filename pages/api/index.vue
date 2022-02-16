@@ -35,19 +35,14 @@
 <script>
 export default {
   fetch() {
-    const result = () => {
-      return this.$axios.get("https://rickandmortyapi.com/api/character");
-    };
-
-    Promise.all([result()])
+    this.$axios.get("https://rickandmortyapi.com/api/character")
       .then((res) => {
-        const [result] = res;
-        this.arrys = result.data.results.slice(1, 10)
+        this.arrys = res.data.results.slice(1, 10);
+
       })
       .catch((err) => {
-        console.error(this.err = 'error promise')
+        console.error(this.err = 'error')
       })
-
   },
   fetchOnServer: false,
   data() {
